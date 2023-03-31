@@ -25,11 +25,39 @@ const day = hour * 24;
 const today = new Date().toISOString().split('T')[0];
 dateEl.setAttribute('min', today);
 
+function updateDOM() {
+  const now = new Date().getTime();
+  const distance = countdownValue - now;
+  console.log('distance', distance);
+
+  const days = Math.floor(distance / day);
+  const hours = Math.floor((distance % day) / hour);
+  const minutes = Math.floor((distance % hour) / minute);
+  const seconds = Math.floor((distance % minute) / second);
+
+  console.log(days, hours, minutes, seconds);
+
+  inputContainer.hidden = true;
+  countdownEl.hidden = false;
+
+  console.log(timeElements);
+
+  countdownElTitle.textContent = `${countdownTitle}`;
+  timeElements[0].textContent = `${days}`;
+  timeElements[1].textContent = `${hours}`;
+  timeElements[2].textContent = `${minutes}`;
+  timeElements[3].textContent = `${seconds}`;
+}
+
 function updateCountdown(e) {
   e.preventDefault();
   countdownTitle = e.srcElement[0].value;
   countdownDate = e.srcElement[1].value;
   console.log(countdownTitle, countdownDate);
+
+  countdownValue = new Date(countdownDate).getTime();
+  console.log('countdown value', countdownValue);
+  updateDOM();
 }
 
 countdownForm.addEventListener('submit', updateCountdown);
