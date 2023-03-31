@@ -13,5 +13,5 @@ Used links:
 7. [JavaScript String split()](https://www.w3schools.com/jsref/jsref_split.asp)
 8. [HTMLFormElement: submit event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event)
 9. [preventDefault() Event Method](https://www.w3schools.com/jsref/event_preventdefault.asp)
-10. []()
+10. [JavaScript Timing Events](https://www.w3schools.com/js/js_timing.asp)
 11. []()
